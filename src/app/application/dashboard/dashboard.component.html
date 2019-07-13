@@ -1,0 +1,33 @@
+{{'hello'|translate}}
+<h3>{{'listFacture'|translate}}</h3>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Numéro</th>
+            <th>Date</th>
+            <th>Client</th>
+            <th>Quantitie</th>
+            <th>Prix U</th>
+            <th>Montant</th>
+            <th>TVA</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let h of facture" >
+            <td>{{h.numero}}</td>
+            <td>{{h.date|date:'MMM/dd/yyyy'}}</td>
+            <td>{{h.client}}</td>
+            <td>{{h.quantite}}</td>
+            <td>{{h.pu}}</td>
+            <td>{{h.pu * h.quantite}}</td>
+            <td>{{h.tva}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="delete(h)">Delete</button>
+                <button class="btn btn-info" (click)="edit(h)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

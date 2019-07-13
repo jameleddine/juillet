@@ -1,0 +1,38 @@
+<h3>Ajouter Facture</h3>
+<div class="container">
+<div class="form-group">
+    <label>Numero</label>
+    <input class="form-control" type="number" [(ngModel)]="facture.numero">
+</div>
+
+<div class="form-group">
+    <label>Date</label>
+    <input class="form-control" type="date" [(ngModel)]="facture.date">
+</div>
+
+<div class="form-group">
+    <label>Client</label>
+    <input class="form-control" type="text" [(ngModel)]="facture.client">
+</div>
+
+<div class="form-group">
+    <label>Quantité</label>
+    <input class="form-control" type="number" [(ngModel)]="facture.quantite">
+</div>
+
+<div class="form-group">
+    <label>Prix Unitaire</label>
+    <input class="form-control" type="number" [(ngModel)]="facture.pu">
+</div>
+
+<div class="form-group">
+    <label>TVA</label>
+    <select [(ngModel)]="facture.tva" class="form-control">
+        <option value="6">6%</option>
+        <option value="18">18%</option>
+        <option value="19">19%</option>
+    </select>
+</div>
+
+<button class="btn btn-primary" (click)="save()">Enregistrer</button>
+</div>

@@ -1,0 +1,71 @@
+{{test}}
+<input value="{{test}}">
+<input [value]="test">
+
+<button (click)="callfnct()" class="btn btn-success">
+    click !!!
+</button>
+<br>
+<button class="btn btn-success" (click)="increment()">+</button>
+{{count}}
+<button class="btn btn-danger" (click)="decrement()">-</button>
+<hr>
+<input class="form-control" [(ngModel)]="test">
+<hr>
+<div class="container">
+<div class="form-group">
+    <label>Nom & prenom</label>
+    <input class="form-control" [(ngModel)]="name">
+    <span *ngIf="name == '' || name == undefined" style="color:red">Nom obligatoire *</span>
+</div>
+<div class="form-group">
+    <label>Email</label>
+    <input class="form-control" [(ngModel)]="email">
+</div>
+<div class="form-group">
+    <label>Phone</label>
+    <input class="form-control" [(ngModel)]="phone">
+</div>
+<div class="form-group">
+    <label>About</label>
+    <textarea class="form-control" [(ngModel)]="about"></textarea>
+</div>
+<button  class="btn btn-info" (click)='save()'>Save</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>About</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let h of users">
+            <td>{{h.name}}</td>
+            <td>{{h.email}}</td>
+            <td>{{h.phone}}</td>
+            <td>{{h.about}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <th>Search</th>
+            <th><input class="form-control" [(ngModel)]="item"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let h of HEROES |search:item" [ngClass]="{red:h.id=='1',black:h.id=='2',yellow:h.id=='5'}">
+            <td>{{h.id}}</td>
+            <td>{{h.name}}</td>
+        </tr>
+    </tbody>
+</table>
